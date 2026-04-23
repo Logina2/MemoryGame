@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Memory Game</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-dark text-white">
+
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h1 class="display-3"> Memory Game</h1>
+
+            <div class="row justify-content-center my-4">
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-between mb-1">
+                        <h4>Status</h4>
+                        <h4>Time: <span id="timer" class="text-warning">0</span>s</h4>
+                    </div>
+                    <div class="progress" style="height: 30px;">
+                        <div id="progress-bar"
+                            class="progress-bar bg-success progress-bar-striped progress-bar-animated"
+                            role="progressbar" style="width: 0%">0%</div>
+                    </div>
+                </div>
+            </div>
+
+            <h5 id="game-message" class="text-info">Let's play!</h5>
+        </div>
+
+        <div id="game-board" class="row g-3 justify-content-center"></div>
+
+        <div class="text-center mt-5">
+            <button id="start-btn" class="btn btn-primary btn-lg px-5">Start Game</button>
+        </div>
+    </div>
+
+    <audio id="flipSound" src="audio/flip.mp3"></audio>
+    <audio id="matchSound" src="audio/good.mp3"></audio>
+    <audio id="failSound" src="audio/fail.mp3"></audio>
+    <audio id="winSound" src="audio/game-over.mp3"></audio>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
