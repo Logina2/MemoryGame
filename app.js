@@ -1,18 +1,16 @@
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const images = ['0.jpg', '1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg'];
 let flippedCards = [];
 let matchedPairs = 0;
 let lockBoard = false;
 let seconds = 0;
 let timerInterval;
-
-
 const board = document.getElementById('game-board');
 const startBtn = document.getElementById('start-btn');
 const progressBar = document.getElementById('progress-bar');
 const timerElement = document.getElementById('timer');
 const gameMessage = document.getElementById('game-message');
-
 startBtn.onclick = () => {
     if (startBtn.parentElement) {
         startBtn.parentElement.classList.add('d-none');
