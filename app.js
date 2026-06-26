@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const images = ['0.jpg', '1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg'];
 let flippedCards = [];
 let matchedPairs = 0;
@@ -59,8 +58,8 @@ function flip(card) {
 }
 function checkMatch() {
     const [card1, card2] = flippedCards;
-    const name1 = card1?.getAttribute('data-name');
-    const name2 = card2?.getAttribute('data-name');
+    const name1 = card1 === null || card1 === void 0 ? void 0 : card1.getAttribute('data-name');
+    const name2 = card2 === null || card2 === void 0 ? void 0 : card2.getAttribute('data-name');
     if (name1 === name2) {
         matchedPairs++;
         updateUI();
@@ -74,8 +73,8 @@ function checkMatch() {
         lockBoard = true;
         playSound('failSound');
         setTimeout(() => {
-            card1?.classList.remove('flipped');
-            card2?.classList.remove('flipped');
+            card1 === null || card1 === void 0 ? void 0 : card1.classList.remove('flipped');
+            card2 === null || card2 === void 0 ? void 0 : card2.classList.remove('flipped');
             flippedCards = [];
             lockBoard = false;
         }, 800);
@@ -95,10 +94,11 @@ function startTimer() {
     }, 1000);
 }
 function winGame() {
+    var _a;
     clearInterval(timerInterval);
     playSound('winSound');
     gameMessage.innerText = `Great Job! You finished in ${seconds} seconds.`;
-    startBtn.parentElement?.classList.remove('d-none');
+    (_a = startBtn.parentElement) === null || _a === void 0 ? void 0 : _a.classList.remove('d-none');
     startBtn.innerText = "Play Again";
 }
 function playSound(id) {
@@ -108,4 +108,3 @@ function playSound(id) {
         audio.play().catch(() => { });
     }
 }
-//# sourceMappingURL=app.js.map
